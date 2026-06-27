@@ -1,57 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Projects</title>
-  <meta name="description" content="Personal site and project showcase for Your Name." />
+  <title>Amy Munson</title>
+  <meta name="description" content="Personal site and project showcase for Amy Munson." />
+  <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="#top">YN</a>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
+  <!-- ===== Masthead / top nav ===== -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="#top">Amy Munson</a>
+      <nav class="site-nav">
         <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
           <span class="theme-icon" aria-hidden="true"></span>
         </button>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="hero">
-      <p class="eyebrow">Hi, I'm</p>
-      <h1>Your Name</h1>
-      <p class="tagline">
-        Short one-liner about what you do — e.g. "Software developer building tools for the web."
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost" href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <ul class="socials">
-        <li><a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="mailto:you@example.com">Email</a></li>
+  <div id="top" class="page-wrap">
+    <!-- ===== Left author sidebar ===== -->
+    <aside class="author">
+      <!-- Swap this <div> for <img class="author-avatar" src="avatar.jpg" alt="Amy Munson" /> when you have a photo -->
+      <div class="author-avatar" aria-hidden="true">AM</div>
+      <h2 class="author-name">Amy Munson</h2>
+      <!-- <p class="author-bio">Short one-liner about what you do — e.g. "Software developer building tools for the web."</p> -->
+
+      <ul class="author-links">
+        <li><span class="ico">📍</span> Bay Area, CA</li>
+        <li><span class="ico">✉️</span> <a href="mailto:amunson95070@gmail.com">Email</a></li>
+        <li><span class="ico">⌨</span> <a href="https://github.com/amysmunson" target="_blank" rel="noopener">GitHub</a></li>
+        <li><span class="ico">in</span> <a href="https://www.linkedin.com/in/amy-munson-6a7361210" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
-    </section>
+    </aside>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">A few things I've built. <!-- Duplicate a .card block below for each project. --></p>
+    <!-- ===== Main content ===== -->
+    <main class="content">
+      <!-- About -->
+      <section id="about" class="page-section">
+        <h1 class="page-title">About me</h1>
+        <!-- <p>
+          A short paragraph about you — your background, interests, and what you're working
+          on now. Add a couple sentences of personality. Replace this text.
+        </p>
+        <p>
+          A second paragraph if you want more room — research interests, current focus, or
+          what you're looking for. Delete this line if you don't need it.
+        </p> -->
+      </section>
 
-      <div class="grid">
-        <!-- ===== Project card (copy this whole <article> block per project) ===== -->
-        <article class="card">
-          <div class="card-body">
+      <!-- Projects -->
+      <section id="projects" class="page-section">
+        <h1 class="page-title">Projects</h1>
+        <p class="section-intro">A few things I've built. <!-- Duplicate a .card block below for each project. --></p>
+
+        <div class="grid">
+          <!-- ===== Project card (copy this whole <article> block per project) ===== -->
+          <!-- <article class="card">
             <h3 class="card-title">Project One</h3>
             <p class="card-desc">
               One or two sentences on what it does and why it's interesting. Mention the
@@ -62,16 +76,14 @@
               <li>React</li>
               <li>API</li>
             </ul>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/YOUR_USERNAME/project-one" target="_blank" rel="noopener">Code</a>
-            <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
-          </div>
-        </article>
-        <!-- ===== end card ===== -->
+            <div class="card-links">
+              <a href="https://github.com/amysmunson/project-one" target="_blank" rel="noopener">Code</a>
+              <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
+            </div>
+          </article> -->
+          <!-- ===== end card ===== -->
 
-        <article class="card">
-          <div class="card-body">
+          <!-- <article class="card">
             <h3 class="card-title">Project Two</h3>
             <p class="card-desc">
               Describe the second project here. Keep it short and skimmable.
@@ -80,14 +92,12 @@
               <li>Python</li>
               <li>CLI</li>
             </ul>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/YOUR_USERNAME/project-two" target="_blank" rel="noopener">Code</a>
-          </div>
-        </article>
+            <div class="card-links">
+              <a href="https://github.com/amysmunson/project-two" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article> -->
 
-        <article class="card">
-          <div class="card-body">
+          <!-- <article class="card">
             <h3 class="card-title">Project Three</h3>
             <p class="card-desc">
               Another project. Replace, duplicate, or delete these cards as needed.
@@ -96,27 +106,18 @@
               <li>TypeScript</li>
               <li>Node</li>
             </ul>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/YOUR_USERNAME/project-three" target="_blank" rel="noopener">Code</a>
-            <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-      <h2 class="section-title">About</h2>
-      <p class="about-text">
-        A short paragraph about you — your background, interests, and what you're looking
-        for or working on now. Add a couple sentences of personality. Replace this text.
-      </p>
-    </section>
-  </main>
+            <div class="card-links">
+              <a href="https://github.com/amysmunson/project-three" target="_blank" rel="noopener">Code</a>
+              <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
+            </div>
+          </article> -->
+        </div>
+      </section>
+    </main>
+  </div>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Your Name. Built with HTML &amp; CSS, hosted on GitHub Pages.</p>
+    <!-- <p>© <span id="year"></span> Amy Munson. Built with HTML &amp; CSS, hosted on GitHub Pages.</p> -->
   </footer>
 
   <script src="script.js"></script>
