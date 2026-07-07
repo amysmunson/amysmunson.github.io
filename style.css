@@ -94,7 +94,7 @@ a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 50
   border-radius: 50%;
   background: var(--surface);
   cursor: pointer;
-  transition: border-color var(--transition);
+  transition: background-color 0.25s ease;
 }
 .theme-toggle:hover { background: var(--brand-light); }
 html[data-theme="dark"]  .theme-toggle:hover { background: var(--brand); }
@@ -192,17 +192,16 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
 /* ---------- Project cards ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   gap: 18px;
 }
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--background);
+  border: 0px;
   border-radius: var(--radius);
-  padding: 20px;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  padding: 0px;
+  padding-bottom: 20px;
 }
-.card:hover { border-color: var(--brand); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
 .card-title { margin: 0 0 6px; font-size: 1.1rem; }
 .card-desc { color: var(--muted); margin: 0 0 14px; font-size: 0.93rem; }
 
