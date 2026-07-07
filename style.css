@@ -4,9 +4,9 @@
    ================================================================= */
 :root {
   /* Brand / accent — used for links, the avatar, highlights */
-  --brand:        #2a7ae2;   /* swap for your color */
-  --brand-hover:  #1756a9;   /* a darker shade of --brand for hover */
-  --brand-light:  #a6c2ed;   /* a lighter shade of --brand for subtle highlights */
+  --brand:        #236188;   /* swap for your color */
+  --brand-hover:  rgb(26, 65, 116);   /* a darker shade of --brand for hover */
+  --brand-light:  #bedff6;   /* a lighter shade of --brand for subtle highlights */
 
   /* ---- Light theme ---- */
   --l-bg:      #ffffff;   /* page background */
@@ -83,7 +83,7 @@ a:hover { color: var(--brand-hover); text-decoration: underline; }
 .site-title { font-weight: 700; font-size: 1.3rem; color: var(--text); }
 .site-title:hover { text-decoration: none; color: var(--brand); }
 
-.site-nav { display: flex; align-items: center; gap: 22px; }
+.site-nav { display: flex; align-items: center; gap: 40px; }
 .site-nav a { color: var(--text); font-weight: 500; }
 .site-nav a:hover { color: var(--brand); text-decoration: none; }
 
@@ -97,14 +97,34 @@ a:hover { color: var(--brand-hover); text-decoration: underline; }
   transition: border-color var(--transition);
 }
 .theme-toggle:hover { background: var(--brand-light); }
-html[data-theme="dark"]  .theme-toggle:hover { background: var(--brand-hover); }
+html[data-theme="dark"]  .theme-toggle:hover { background: var(--brand); }
 
-.theme-toggle:focus { outline: 1px solid var(--brand-light); }
-html[data-theme="dark"]  .theme-toggle:focus { outline: 1px solid var(--brand-hover); }
+.theme-toggle:focus-visible { outline: 2px solid var(--brand-light); }
+html[data-theme="dark"]  .theme-toggle:focus-visible { outline: 2px solid var(--brand); }
 
-.theme-icon { font-size: 1rem; line-height: 1; }
-html[data-theme="dark"]  .theme-icon::before { content: "🌙"; }
-html[data-theme="light"] .theme-icon::before { content: "☀️"; }
+.theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1;
+  color: var(--text);
+}
+.theme-icon-sun {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+.theme-icon-moon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: none;
+}
+html[data-theme="light"] .theme-icon-sun { display: block; }
+html[data-theme="light"] .theme-icon-moon { display: none; }
+html[data-theme="dark"] .theme-icon-sun { display: none; }
+html[data-theme="dark"] .theme-icon-moon { display: block; }
 
 /* ---------- Two-column page layout ---------- */
 .page-wrap {
