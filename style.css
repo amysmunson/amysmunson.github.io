@@ -81,7 +81,7 @@ a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 50
   justify-content: space-between;
 }
 .site-title { font-weight: 700; font-size: 1.3rem; color: var(--text); }
-.site-title:hover { text-decoration: none; color: var(--brand); }
+.site-title:hover { text-decoration: none; color: var(--brand); font-weight: 700; }
 
 .site-nav { display: flex; align-items: center; gap: 40px; }
 .site-nav a { color: var(--text); font-weight: 500; }
