@@ -213,6 +213,57 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
 }
 .card-links { display: flex; gap: 16px; font-weight: 600; font-size: 0.9rem; }
 
+/* ---------- Hobby Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+.gallery-card {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0px;
+  border-radius: 0;
+  padding: 0;
+  margin: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+.gallery-card-caption {
+  padding: 10px 12px 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.gallery-card-horizontal {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0px;
+  border-radius: 0;
+  padding: 0;
+  margin: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.gallery-card-horizontal img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--border);
