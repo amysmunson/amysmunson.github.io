@@ -6,6 +6,7 @@
   /* Brand / accent — used for links, the avatar, highlights */
   --brand:        #2a7ae2;   /* swap for your color */
   --brand-hover:  #1756a9;   /* a darker shade of --brand for hover */
+  --brand-light:  #a6c2ed;   /* a lighter shade of --brand for subtle highlights */
 
   /* ---- Light theme ---- */
   --l-bg:      #ffffff;   /* page background */
@@ -89,13 +90,18 @@ a:hover { color: var(--brand-hover); text-decoration: underline; }
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
   width: 32px; height: 32px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 0px solid var(--border);
+  border-radius: 50%;
   background: var(--surface);
   cursor: pointer;
   transition: border-color var(--transition);
 }
-.theme-toggle:hover { border-color: var(--brand); }
+.theme-toggle:hover { background: var(--brand-light); }
+html[data-theme="dark"]  .theme-toggle:hover { background: var(--brand-hover); }
+
+.theme-toggle:focus { outline: 1px solid var(--brand-light); }
+html[data-theme="dark"]  .theme-toggle:focus { outline: 1px solid var(--brand-hover); }
+
 .theme-icon { font-size: 1rem; line-height: 1; }
 html[data-theme="dark"]  .theme-icon::before { content: "🌙"; }
 html[data-theme="light"] .theme-icon::before { content: "☀️"; }
