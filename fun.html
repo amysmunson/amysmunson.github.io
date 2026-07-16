@@ -6,6 +6,7 @@
   <title>Amy Munson</title>
   <meta name="description" content="Personal site for Amy Munson." />
   <meta name="robots" content="noimageindex" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'" />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +22,7 @@
         <a href="/#about">About</a>
         <a href="/#research">Research</a>
         <a href="/#projects">Projects</a>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener nofollow">Resume</a>
         <a href="/fun.html">Hobbies</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
           <span class="theme-icon" aria-hidden="true">
@@ -61,7 +62,7 @@
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
           </span>
-          <a href="mailto:amunson95070@gmail.com">Email</a>
+          <a data-email="amunson95070,gmail.com">Email</a>
         </li>
         <li>
           <img class="ico" src="assets/GitHub_Invertocat_Black.svg" data-light-src="assets/GitHub_Invertocat_Black.svg" data-dark-src="assets/GitHub_Invertocat_White.svg" alt="GitHub Logo" />

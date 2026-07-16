@@ -30,3 +30,10 @@
 
 // Auto-update footer year.
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Assemble mailto links at runtime so the address isn't sitting in the
+// static HTML for spam harvesters to scrape.
+document.querySelectorAll("[data-email]").forEach(function (link) {
+  const [user, domain] = link.dataset.email.split(",");
+  link.href = "mailto:" + user + "@" + domain;
+});
