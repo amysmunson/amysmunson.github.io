@@ -63,6 +63,9 @@ p { margin: 0 0 1em; }
 a { color: var(--brand); text-decoration: none; }
 a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 500; }
 
+.plain-link { color: var(--text); }
+.plain-link:hover { color: var(--text); }
+
 /* ---------- Masthead / top nav ---------- */
 .masthead {
   position: sticky;
@@ -82,6 +85,9 @@ a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 50
 }
 .site-title { font-weight: 700; font-size: 1.3rem; color: var(--text); }
 .site-title:hover { text-decoration: none; color: var(--brand); font-weight: 700; }
+
+.app-title { display: inline-flex; align-items: center; gap: 10px; }
+.app-title-icon { width: 28px; height: 28px; border-radius: 20%; border: 1px solid var(--border); }
 
 .site-nav { display: flex; align-items: center; gap: 40px; }
 .site-nav a { color: var(--text); font-weight: 500; }
@@ -272,6 +278,112 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
   font-size: 0.88rem;
 }
 
+/* ---------- Single-column utility pages (app support / legal) ---------- */
+.single-col {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ReciGuard pages get a much narrower side gutter than the rest of the site,
+   and the content column fills most of the viewport instead of a fixed 720px. */
+.reciguard-page .masthead-inner,
+.reciguard-page .single-col {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.reciguard-page .single-col {
+  width: 90%;
+  max-width: none;
+}
+
+/* ---------- App hero ---------- */
+.app-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.app-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 20%;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.app-hero-text .app-name { margin: 0 0 4px; font-size: 1.6rem; }
+.app-hero-text .app-tagline { margin: 0; color: var(--muted); }
+
+.app-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3px 10px;
+  margin-bottom: 18px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+}
+.store-badge:hover { cursor: pointer; }
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px 24px;
+}
+.feature-list li {
+  padding-left: 20px;
+  position: relative;
+}
+.feature-list li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--brand);
+}
+
+.page-links { display: flex; gap: 20px; font-weight: 600; }
+
+/* ---------- FAQ accordion ---------- */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before {
+  content: "+";
+  display: inline-block;
+  width: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+.faq-item[open] summary::before { content: "\2212"; }
+.faq-item p {
+  margin: 10px 0 0 16px;
+  color: var(--muted);
+}
+
 /* ---------- Responsive: stack sidebar on top ---------- */
 @media (max-width: 760px) {
   .page-wrap { grid-template-columns: 1fr; gap: 32px; }
@@ -279,4 +391,5 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
   .author-avatar { margin-left: auto; margin-right: auto; }
   .author-links li { justify-content: center; }
   .site-nav { gap: 16px; }
+  .app-hero { flex-direction: column; text-align: center; }
 }
