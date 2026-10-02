@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amy Munson</title>
-  <meta name="description" content="Personal site for Amy Munson." />
+  <meta name="description" content="Personal site for Amy Munson. Full stack software engineer in the Bay Area that went to UCSD and UCSC." />
   <meta name="robots" content="noimageindex" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'" />
   <link rel="icon" href="data:," />
@@ -18,13 +18,15 @@
   <header class="masthead">
     <div class="masthead-inner">
       <a class="site-title" href="#top">Amy Munson</a>
-      <nav class="site-nav">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener nofollow">Resume</a>
-        <a href="fun.html">Hobbies</a>
-        <a href="reciguard/">ReciGuard</a>
+      <div class="nav-cluster">
+        <nav id="site-nav" class="site-nav">
+          <a href="#">Home</a>
+          <!-- <a href="#research">Research</a>
+          <a href="#projects">Projects</a> -->
+          <a href="assets/resume.pdf" target="_blank" rel="noopener nofollow">Resume</a>
+          <a href="fun.html">Hobbies</a>
+          <a href="reciguard/">ReciGuard</a>
+        </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
           <span class="theme-icon" aria-hidden="true">
             <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -35,7 +37,17 @@
             </svg>
           </span>
         </button>
-      </nav>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <svg class="nav-icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <svg class="nav-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -77,40 +89,38 @@
     </aside>
 
     <!-- ===== Main content ===== -->
+     <!-- tst -->
     <main class="content">
       <!-- About -->
       <section id="about" class="page-section">
         <h1 class="page-title">About</h1>
         <p>
-          I'm a full stack software engineer based in the Bay Area with a passion for software that solves user problems and addresses the intersection of AI and security.
-        </p>
-        <p>
-          I recently completed my Master's degree in Computer Science from UC San Diego with a focus coursework such as Networked Systems, Database Systems, Operating Systems, and Parallel Computation. I earned my Bachelor's in Computer Science from UC Santa Cruz, where I was also a Research Scholar with CAHSI. This research centered on the use of large language models in identifying code vulnerabilities in comparison to traditional static analysis tools with Professor Alvaro Cardenas, Juanita Gomez, and AppSecAI.
+          I'm a full stack software engineer based in the Bay Area. I earned my Master’s degree in computer science from UC San Diego and my Bachelor's from UC Santa Cruz. I was also a Research Scholar with CAHSI while at UCSC. 
         </p>
       </section>
 
 
       <!-- Research -->
       <section id="research" class="page-section">
-        <h1 class="page-title">Research</h1>
-        <p class="section-intro">A few things I've built. <!-- Duplicate a .card block below for each project. --></p>
-
+        <h1 class="page-title">Research</h1> 
         <div class="grid">
-          <!-- ===== Project card (copy this whole <article> block per project) ===== -->
+          <!-- ===== Research Project card ===== -->
           <article class="card">
-            <h3 class="card-title">Project One</h3>
+            <h3 class="card-title">Using LLMs to Detect Software Vulnerabilities</h3>
             <p class="card-desc">
-              <!-- Munson, Amy & Gomez, Juanita & Cardenas, Alvaro. (2025). With a Little Help from My (LLM) Friends: Enhancing Static Analysis with LLMs to Detect Software Vulnerabilities. 25-32. 10.1109/LLM4Code66737.2025.00008. 
-              https://doi.org/10.1109/LLM4Code66737.2025.00008 -->
+              This paper explores the integration of Large Language Models (LLMs) with static analysis tools, specifically Semgrep, to enhance vulnerability detection in Java applications. Through a series of experiments, we evaluate the performance of various LLMs in triaging security weaknesses identified by Semgrep. We also study how LLMs perform across different types of vulnerabilities and assess the impact of various prompt engineering strategies. Our results reveal that while some LLM models reduce the accuracy of baseline results with static analysis, they show a consistent improvement with each new model released. In particular, o1-mini significantly outperformed others in our experiments in terms of their accuracy and false positive reduction. Although LLMs might not be ready for prime time in vulnerability detection yet, this study highlights their growing potential to complement existing tools and paves the way for future research to further optimize LLM-based vulnerability detection systems.
+            </p>
+            <p class="card-subtitle">
+              Munson, Amy & Gomez, Juanita & Cardenas, Alvaro. (2025). With a Little Help from My (LLM) Friends: Enhancing Static Analysis with LLMs to Detect Software Vulnerabilities. 25-32. 10.1109/LLM4Code66737.2025.00008. 
+              https://doi.org/10.1109/LLM4Code66737.2025.00008
             </p>
             <ul class="tags">
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>API</li>
+              <li>LLM</li>
+              <li>Static Analysis</li>
+              <li>Semgrep</li>
             </ul>
             <div class="card-links">
-              <a href="https://github.com/amysmunson/project-one" target="_blank" rel="noopener">Code</a>
-              <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
+              <a href="https://doi.org/10.1109/LLM4Code66737.2025.00008" target="_blank" rel="noopener">Paper</a>
             </div>
           </article>
           <!-- ===== end card ===== -->
@@ -121,23 +131,22 @@
       <!-- Projects -->
       <section id="projects" class="page-section">
         <h1 class="page-title">Projects</h1>
-        <p class="section-intro">A few things I've built. <!-- Duplicate a .card block below for each project. --></p>
+        <p class="section-intro">A few personal and school projects I've been working on.
 
         <div class="grid">
-          <!-- ===== Project card (copy this whole <article> block per project) ===== -->
           <article class="card">
-            <h3 class="card-title">Project One</h3>
+            <h3 class="card-title">ReciGuard</h3>
             <p class="card-desc">
-              One or two sentences on what it does and why it's interesting. Mention the
-              problem it solves or what you learned.
+              An app to store recipes and track your friends dietary restrictions. Helps you catch when a recipe isn't a good fit for a friend.
             </p>
             <ul class="tags">
+              <li>Recipes</li>
               <li>JavaScript</li>
-              <li>React</li>
-              <li>API</li>
+              <li>React Native</li>
+              <li>Expo</li>
             </ul>
             <div class="card-links">
-              <a href="https://github.com/amysmunson/project-one" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/amysmunson/reciguard" target="_blank" rel="noopener">Code</a>
               <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
             </div>
           </article>
@@ -146,31 +155,17 @@
           <article class="card">
             <h3 class="card-title">Project Two</h3>
             <p class="card-desc">
-              Describe the second project here. Keep it short and skimmable.
+              An AI agent made less prone to prompt injection through tool predictions. An LLM generates a prediction of the tools needed to complete each task and the reference monitor ensures that the AI Agent calls only these tools and in the correct order.
             </p>
             <ul class="tags">
               <li>Python</li>
-              <li>CLI</li>
+              <li>LLM</li>
+              <li>Agent</li>
             </ul>
             <div class="card-links">
-              <a href="https://github.com/amysmunson/project-two" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/amysmunson/LLM_Experiments" target="_blank" rel="noopener">Code</a>
             </div>
           </article>
-
-          <!-- <article class="card">
-            <h3 class="card-title">Project Three</h3>
-            <p class="card-desc">
-              Another project. Replace, duplicate, or delete these cards as needed.
-            </p>
-            <ul class="tags">
-              <li>TypeScript</li>
-              <li>Node</li>
-            </ul>
-            <div class="card-links">
-              <a href="https://github.com/amysmunson/project-three" target="_blank" rel="noopener">Code</a>
-              <a href="https://your-demo-link.com" target="_blank" rel="noopener">Live demo</a>
-            </div>
-          </article> -->
         </div>
       </section>
     </main>

@@ -9,8 +9,8 @@
   --brand-light:  #bedff6;
 
   /* ---- Light theme ---- */
-  --l-bg:      #ffffff;   /* page background */
-  --l-surface: #fcfcfc;   /* cards / sidebar */
+  --l-bg:      #fffdfd;   /* page background */
+  --l-surface: #f6f4f4;   /* cards / sidebar */
   --l-text:    #2a2a2a;   /* main text */
   --l-muted:   #898c8f;   /* secondary / meta text */
   --l-border:  #ececec;   /* hairlines, card borders */
@@ -76,6 +76,7 @@ a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 50
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 .masthead-inner {
+  position: relative;
   max-width: var(--page-width);
   margin: 0 auto;
   padding: 14px 24px;
@@ -89,9 +90,27 @@ a:hover { color: var(--brand-hover); text-decoration: underline; font-weight: 50
 .app-title { display: inline-flex; align-items: center; gap: 10px; }
 .app-title-icon { width: 28px; height: 28px; border-radius: 20%; border: 1px solid var(--border); }
 
-.site-nav { display: flex; align-items: center; gap: 40px; }
-.site-nav a { color: var(--text); font-weight: 500; }
-.site-nav a:hover { color: var(--brand); text-decoration: none; }
+.nav-cluster { display: flex; align-items: center; gap: 20px; }
+
+.site-nav, .site-nav-permanent { display: flex; align-items: center; gap: 40px; }
+.site-nav a, .site-nav-permanent a { color: var(--text); font-weight: 500; }
+.site-nav a:hover, .site-nav-permanent a:hover { color: var(--brand); text-decoration: none; }
+
+.nav-toggle {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border: 0; border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-toggle:hover { background: var(--surface); }
+.nav-toggle-icon { display: inline-flex; width: 1.4rem; height: 1.4rem; }
+.nav-toggle-icon svg { width: 100%; height: 100%; }
+.nav-icon-close { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-icon-menu { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-icon-close { display: block; }
 
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
@@ -209,7 +228,8 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
   padding-bottom: 20px;
 }
 .card-title { margin: 0 0 6px; font-size: 1.1rem; }
-.card-desc { color: var(--muted); margin: 0 0 14px; font-size: 0.93rem; }
+.card-desc { color: var(--text); margin: 0 0 14px; font-size: 0.93rem; }
+.card-subtitle { color: var(--muted); margin: 0 0 14px; font-size: 0.93rem; }
 
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 0 0 14px; }
 .tags li {
@@ -384,12 +404,59 @@ html[data-theme="dark"] .theme-icon-moon { display: block; }
   color: var(--muted);
 }
 
-/* ---------- Responsive: stack sidebar on top ---------- */
+/* ---------- Responsive: collapsible nav + horizontal author bar ---------- */
 @media (max-width: 760px) {
-  .page-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .page-wrap { grid-template-columns: 1fr; gap: 24px; }
+
+  /* Author sidebar becomes a horizontal strip: no photo/name, just the links. */
   .author { position: static; text-align: center; }
-  .author-avatar { margin-left: auto; margin-right: auto; }
-  .author-links li { justify-content: center; }
-  .site-nav { gap: 16px; }
+  .author-avatar, .author-name, .author-bio { display: none; }
+  .author-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 4px;
+  }
+  .author-links li {
+    justify-content: center;
+    padding: 2px 0;
+    border-top: 0;
+  }
+  .author-links li:last-child { border-bottom: 0; }
+
+  /* Nav collapses behind a menu button. */
+  .nav-toggle { display: inline-flex; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 24px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav a {
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+  .nav-cluster { gap: 14px; }
+
+  /* ReciGuard nav never collapses, so give it room to wrap instead of
+     overflowing the header on narrow screens. */
+  .site-nav-permanent {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 6px;
+  }
+
   .app-hero { flex-direction: column; text-align: center; }
 }

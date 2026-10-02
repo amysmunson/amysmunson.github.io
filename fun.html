@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amy Munson</title>
+  <title>Amy Munson | Hobbies</title>
   <meta name="description" content="Personal site for Amy Munson." />
   <meta name="robots" content="noimageindex" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'" />
@@ -18,12 +18,15 @@
   <header class="masthead">
     <div class="masthead-inner">
       <a class="site-title" href="/#top">Amy Munson</a>
-      <nav class="site-nav">
-        <a href="/#about">About</a>
-        <a href="/#research">Research</a>
-        <a href="/#projects">Projects</a>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener nofollow">Resume</a>
-        <a href="/fun.html">Hobbies</a>
+      <div class="nav-cluster">
+        <nav id="site-nav" class="site-nav">
+          <a href="/#">Home</a>
+          <!-- <a href="/#research">Research</a>
+          <a href="/#projects">Projects</a> -->
+          <a href="assets/resume.pdf" target="_blank" rel="noopener nofollow">Resume</a>
+          <a href="/fun.html">Hobbies</a>
+          <a href="reciguard/">ReciGuard</a>
+        </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
           <span class="theme-icon" aria-hidden="true">
             <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -34,7 +37,17 @@
             </svg>
           </span>
         </button>
-      </nav>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <svg class="nav-icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <svg class="nav-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
